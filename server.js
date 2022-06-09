@@ -7,7 +7,7 @@ const path = require('path')
 const mongoose = require('mongoose');
 
 const mongoURI = 'mongodb://localhost:27017'
-mongoose.connect(uri)
+mongoose.connect(mongoURI)
     .then(db => console.log('DB connected'))
     .catch(err => console.log(err));
 
@@ -26,7 +26,6 @@ app.set('view engine','ejs')
 app.use('/img', express.static(path.resolve(__dirname,'assets/img')))
 app.use('/js', express.static(path.resolve(__dirname,'assets/js')))
 
-app.use('/',routes)
 //log request
 app.use(morgan('tiny'))
 
