@@ -32,30 +32,44 @@
         </div>
     </nav>
     <div style="margin-left: 2%; margin-right: 2%; margin-top: 1%;">
-        <a href="#" class="btn btn-primary" style="margin-left: 7%; margin-right: 7%; margin-top: 1%;">Registrar componente</a>
+        <a href="#" class="btn btn-primary" style="margin-left: 7%; margin-right: 7%; margin-top: 1%;">Registrar movimiento </a>
+
         <div class="card" style="margin-left: 7%; margin-right: 7%; margin-top: 1%;">
             <div class="card-body">
                 <table class="table table-striped">
                     <thead>
                       <tr>
                         <th scope="col">Codigo</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Unidad</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Almacen</th>
+                        <th scope="col">Tipo de Movimiento</th>
                         <th>Opciones</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <% for(var i = 0; i < components.length; i++) { %>
+                        <% for(var i = 0; i < movement.length; i++) { %>
+                            <tr>
+                              <td><%= movement[i].movementCode %> </td>
+                              <td><%= movement[i].movementDate %> </td>
+                              <td><%= movement[i].storeCode %> </td>
+                              <td><%= movement[i].movementType %> </td>
+
+                              <td style="width: 25%;">
+                                  <a href="/inventoryMovement/ver/<%= movement[i].movementCode%>" class="btn btn-primary">Ver</a>
+                                  
+                              </td>
+                            </tr>
+                          <% }%> 
                         <tr>
-                          <td><%= components[i].codComponent %> </td>
-                          <td><%= components[i].description %> </td>
-                          <td><%= components[i].unit %></td>
-                          <td style="width: 25%;">
-                              <a href="/components/ver/<%= components[i].codComponent%>" class="btn btn-primary">Ver</a>
-                              <a href="/components/edit/<%= components[i].codComponent%>" class="btn btn-success">Modificar</a>
-                          </td>
+                            <td>PROD-1</td>
+                            <td>Mouse Dell nub nfea</td>
+                            <td>Inidividual</td>
+                            <td>40</td>
+                            <td style="width: 25%;">
+                                <a href="#" class="btn btn-primary">Ver</a>
+                            
+                            </td>
                         </tr>
-                      <% }%> 
                     </tbody>
                   </table>
             </div>

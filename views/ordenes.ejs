@@ -32,30 +32,35 @@
         </div>
     </nav>
     <div style="margin-left: 2%; margin-right: 2%; margin-top: 1%;">
-        <a href="#" class="btn btn-primary" style="margin-left: 7%; margin-right: 7%; margin-top: 1%;">Registrar componente</a>
+        <a href="#" class="btn btn-primary" style="margin-left: 7%; margin-right: 7%; margin-top: 1%;">Crear orden</a>
+
         <div class="card" style="margin-left: 7%; margin-right: 7%; margin-top: 1%;">
             <div class="card-body">
                 <table class="table table-striped">
                     <thead>
                       <tr>
                         <th scope="col">Codigo</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Unidad</th>
+                        <th scope="col">Suplidor</th>
+                        <th scope="col">Ciudad</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Total</th>
                         <th>Opciones</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <% for(var i = 0; i < components.length; i++) { %>
-                        <tr>
-                          <td><%= components[i].codComponent %> </td>
-                          <td><%= components[i].description %> </td>
-                          <td><%= components[i].unit %></td>
-                          <td style="width: 25%;">
-                              <a href="/components/ver/<%= components[i].codComponent%>" class="btn btn-primary">Ver</a>
-                              <a href="/components/edit/<%= components[i].codComponent%>" class="btn btn-success">Modificar</a>
-                          </td>
-                        </tr>
-                      <% }%> 
+                        <% for(var i = 0; i < orders.length; i++) { %>
+                            <tr>
+                              <td><%= orders[i].orderNumber %> </td>
+                              <td><%= orders[i].codSupplier %> </td>
+                              <td><%= orders[i].citySuplier %> </td>
+                              <td><%= orders[i].orderDate %> </td>
+                              <td><%= orders[i].total %> </td>
+
+                              <td style="width: 25%;">
+                                  <a href="/orders/ver/<%= orders[i].orderNumber%>" class="btn btn-primary">Ver</a>
+                              </td>
+                            </tr>
+                          <% }%> 
                     </tbody>
                   </table>
             </div>

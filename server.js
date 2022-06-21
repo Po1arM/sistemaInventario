@@ -26,6 +26,7 @@ app.set('view engine','ejs')
 app.use('/img', express.static(path.resolve(__dirname,'assets/img')))
 app.use('/js', express.static(path.resolve(__dirname,'assets/js')))
 
+app.use('/',routes)
 //log request
 app.use(morgan('tiny'))
 

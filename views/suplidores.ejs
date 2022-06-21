@@ -32,30 +32,47 @@
         </div>
     </nav>
     <div style="margin-left: 2%; margin-right: 2%; margin-top: 1%;">
-        <a href="#" class="btn btn-primary" style="margin-left: 7%; margin-right: 7%; margin-top: 1%;">Registrar componente</a>
+        <a href="#" class="btn btn-primary" style="margin-left: 7%; margin-right: 7%; margin-top: 1%;">Registrar Suplidor</a>
+
         <div class="card" style="margin-left: 7%; margin-right: 7%; margin-top: 1%;">
             <div class="card-body">
                 <table class="table table-striped">
                     <thead>
                       <tr>
-                        <th scope="col">Codigo</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Unidad</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Suplidor</th>
+                        <th scope="col">RNC</th>
+                        <th scope="col">Ciudad</th>
                         <th>Opciones</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <% for(var i = 0; i < components.length; i++) { %>
+                        <% for(var i = 0; i < components.length; i++) { %>
+                            <tr>
+                              <td><%= suppliers[i].codSupplier %> </td>
+                              <td><%= suppliers[i].name %> </td>
+                              <td><%= suppliers[i].rnc %> </td>
+                              <td><%= suppliers[i].city %> </td>
+
+                              <td style="width: 25%;">
+                                  <a href="/supplier/ver/<%= suppliers[i].codSupplier %>" class="btn btn-primary">Ver</a>
+                                  <a href="/supplier/edit/<%= suppliers[i].codSupplier %>" class="btn btn-success">Modificar</a>
+                                  <a href="/supplier/del/<%= suppliers[i].codSupplier %>" class="btn btn-danger">Eliminar</a>
+                              </td>
+                            </tr>
+                          <% }%> 
                         <tr>
-                          <td><%= components[i].codComponent %> </td>
-                          <td><%= components[i].description %> </td>
-                          <td><%= components[i].unit %></td>
-                          <td style="width: 25%;">
-                              <a href="/components/ver/<%= components[i].codComponent%>" class="btn btn-primary">Ver</a>
-                              <a href="/components/edit/<%= components[i].codComponent%>" class="btn btn-success">Modificar</a>
-                          </td>
+                            <td>SUP-1</td>
+                            <td>un mmg</td>
+                            <td>13-991911</td>
+                            <td>Santiago de los caballeros</td>
+                            <td style="width: 25%;">
+                                <a href="#" class="btn btn-primary">Ver</a>
+                                <a href="#" class="btn btn-success">Modificar</a>
+                                <a href="#" class="btn btn-danger">Eliminar</a>
+                            </td>
                         </tr>
-                      <% }%> 
+                        
                     </tbody>
                   </table>
             </div>

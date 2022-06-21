@@ -32,32 +32,24 @@
         </div>
     </nav>
     <div style="margin-left: 2%; margin-right: 2%; margin-top: 1%;">
-        <a href="#" class="btn btn-primary" style="margin-left: 7%; margin-right: 7%; margin-top: 1%;">Registrar componente</a>
         <div class="card" style="margin-left: 7%; margin-right: 7%; margin-top: 1%;">
             <div class="card-body">
-                <table class="table table-striped">
-                    <thead>
-                      <tr>
-                        <th scope="col">Codigo</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Unidad</th>
-                        <th>Opciones</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <% for(var i = 0; i < components.length; i++) { %>
-                        <tr>
-                          <td><%= components[i].codComponent %> </td>
-                          <td><%= components[i].description %> </td>
-                          <td><%= components[i].unit %></td>
-                          <td style="width: 25%;">
-                              <a href="/components/ver/<%= components[i].codComponent%>" class="btn btn-primary">Ver</a>
-                              <a href="/components/edit/<%= components[i].codComponent%>" class="btn btn-success">Modificar</a>
-                          </td>
-                        </tr>
-                      <% }%> 
-                    </tbody>
-                  </table>
+              <form action="/components/add" method="post">
+                <span class="input-group-text" id="codigo">Codigo: </span>
+                <input type="text" class="form-control" aria-describedby="codigo" name="codComponent" value="<%= component.codComponent%>">
+
+                <span class="input-group-text" id="nombre">Descripción: </span>
+                <input type="text" class="form-control" aria-describedby="nombre" name="description" value="<%= component.description%>">
+
+                <span class="input-group-text" id="unit">Unidad: </span>
+                <input type="text" class="form-control" aria-describedby="unit" name="unit" value="<%= component.unit%>">
+                
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 4px;">
+                  <button class="btn btn-primary" type="submit">Registrar</button>
+                  <a class="btn btn-danger" href="/">Cancelar</a>
+                </div>
+                
+            </form>
             </div>
           </div>
     </div>

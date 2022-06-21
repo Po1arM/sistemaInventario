@@ -9,7 +9,8 @@ const component = new Schemma({
     store:[{
         storeCode: Number,
         storeBalance: Number
-    }]
+    }],
+
 })
 
 module.exports = mongoose.model('component', component)
